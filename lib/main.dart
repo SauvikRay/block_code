@@ -24,3 +24,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+// https://github.com/LucianoDellaForza/Flutter-Projects/blob/master/login_bloc_app/lib/src/screens/login_screen.dart

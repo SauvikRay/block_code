@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:block_code/blocks/block.dart';
 import 'package:flutter/material.dart';
 
@@ -28,12 +26,13 @@ Widget EmailField() {
   return StreamBuilder(
       stream: bloc.email,
       builder: (context, snapshot) {
+        var error = snapshot.error;
         return TextField(
             keyboardType: TextInputType.emailAddress,
-            decoration: const InputDecoration(
+            decoration:  InputDecoration(
               hintText: 'my@example.com',
               labelText: 'Email Address',
-          //    errorText: snapshot.error,
+              errorText: error?.toString(),
             ),
             onChanged: (value) {
               bloc.changeEmail(value);
